@@ -23,6 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use('/', indexRouter);
+//you created these all????yes
 app.use('/about', aboutRouter);
 app.use('/service', serviceRouter);
 app.use('/service', projectRouter);
@@ -44,5 +45,8 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
+app.get('/', function(req, res, next) {
+    res.download(__dirname + 'images/Bal_Dhakal_Resume.pdf', Bal - Dhakal_Resume.pdf)
+})
 
 module.exports = app;
